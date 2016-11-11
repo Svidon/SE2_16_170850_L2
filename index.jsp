@@ -2,14 +2,14 @@
 <html>
    <head>
       <meta charset="utf-8">
-      <title> HTML5 basics </title>
+      <title> Kind Module </title>
    </head>
    <body>
       <header>
-         <h1>Javascript basics</h1>
+         <h1>Manage volounteers</h1>
       </header>
+      <!-- INSERT BUTTON TO START SCRIPT -->
 
-      <p>Welcome to the jungle!</p>
       <script src="script.js"></script>                           
    </body>
 </html>
