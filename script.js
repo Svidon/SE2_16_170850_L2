@@ -36,11 +36,11 @@ function iAm (name) {
  * @return Il totale delle ore accumulate o "Errore" se e' sbagliato il parametro
  */
 function give (hours) {
-	//Controlla che l'imput sia corretto, altrimenti errore (if nested per valori particolari dei casi)
+	//Controlla che l'imput sia corretto, altrimenti errore (if nested per valori particolari dei casi limite)
 	//Controllo che sia un numero
 	if((typeof hours) == 'number'){
 		//Controllo che non sia Nan
-		if (isNaN(hours)){
+		if (!isNaN(hours)){
 			//Controllo se e' negativo
 			if (hours < 0){
 				alert("Errore, parametro errato");
@@ -52,14 +52,14 @@ function give (hours) {
 				alert("Tot " + active.hours);
 				return active.hours;
 			}
-
-			alert("Errore, parametro errato");
-			return "Errore, parametro errato";
 		}
 
 		alert("Errore, parametro errato");
 		return "Errore, parametro errato";
 	}
+
+	alert("Errore, parametro errato");
+	return "Errore, parametro errato";
 }
 
 /**
