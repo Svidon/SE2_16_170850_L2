@@ -8,8 +8,6 @@
       <header>
          <h1>Manage volounteers</h1>
       </header>
-      <!-- INSERT BUTTON TO START SCRIPT -->
-
       <script src="script.js"></script>                           
    </body>
 </html>
