@@ -9,7 +9,7 @@
 		<h1>Warehouse</h1>
 
 		<br>
-		Maximum is: <p id="maximum"></p>
+		Maximum is: <p id="maximum">30</p>
 		<br>
 
 		 <table id="table">
@@ -17,10 +17,6 @@
 		  <tr>
 		    <th>Item</th>
 		    <th>Quantity</th>
-		  </tr>
-		  <tr>
-		    <td>January</td>
-		    <td>$100</td>
 		  </tr>
 		</table>
 

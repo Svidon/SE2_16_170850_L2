@@ -43,8 +43,9 @@ function newItem () {
 	document.getElementById("insert").style.display = "none";
 }
 
+
 /**
- * @brief Funzione che mostra il form per inserire un nuovo item
+ * @brief Funzione che mostra il form per inserire un nuovo max
  */
 function showNewMax () {
 	document.getElementById("changemax").style.display = "block";
@@ -65,8 +66,17 @@ function newMax () {
 		}
 	}
 
+	showMax();
 	document.getElementById("changemax").style.display = "none";
 }
+
+/**
+ * @brief Funzione che mostra il massimo sopra la tabella
+ */
+function showMax () {
+	document.getElementById("maximum").innerHTML = max;
+}
+
 
 /**
  * @brief Funzione di supporto che controlla l'esistenza di un item
