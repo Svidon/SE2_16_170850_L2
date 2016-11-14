@@ -29,12 +29,18 @@ function newItem (name, qty) {
 }
 
 /**
- * @brief Funzione che modifica il massimo di item dello stesso tipo
+ * @brief Funzione che modifica il massimo di item dello stesso tipo (e controlla quelli esistenti)
  * @param new nuovo massimo
  */
 function newMax (new) {
 	max = newMax;
-	alert("Maximum changed to: " + max);
+	alert("Maximum changed to: " + max + " for all items");
+
+	for (var i=0; i<list.length){
+		if (list[i].number > max){
+			list[i].number = max;
+		}
+	}
 }
 
 /**
