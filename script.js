@@ -1,15 +1,28 @@
-//Lista item
+// Lista item
 var list = [];
-//Indice dell'item trovato
+// Indice dell'item trovato
 var now;
-//Massimo dello stesso item
+// Massimo dello stesso item
 var max = 30;
+
+
+/**
+ * @brief Funzione che mostra il form per inserire un nuovo item
+ */
+function showInsert () {
+	document.getElementById("insert").style.display = "block";
+}
 
 /**
  * @brief Funzione che inserisce nuovo item o aumenta la quantita
  * @param name dell'item da inserire/aumentare, qty numero da aggiungere
  */
-function newItem (name, qty) {
+function newItem () {
+	// Prendo parametri
+	var nome = document.getElementById("name").value;
+	var num = document.getElementById("qty").value;
+
+	//Controllo se esiste o devo crearne uno nuovo
 	if(exists(name)){
 		list[now].number += qty;
 
@@ -26,13 +39,23 @@ function newItem (name, qty) {
 
 		list.push(item);
 	}
+
+	document.getElementById("insert").style.display = "none";
+}
+
+/**
+ * @brief Funzione che mostra il form per inserire un nuovo item
+ */
+function showNewMax () {
+	document.getElementById("changemax").style.display = "block";
 }
 
 /**
  * @brief Funzione che modifica il massimo di item dello stesso tipo (e controlla quelli esistenti)
  * @param new nuovo massimo
  */
-function newMax (new) {
+function newMax () {
+	var newMax = document.getElementById("max").value;
 	max = newMax;
 	alert("Maximum changed to: " + max + " for all items");
 
@@ -41,6 +64,8 @@ function newMax (new) {
 			list[i].number = max;
 		}
 	}
+
+	document.getElementById("changemax").style.display = "none";
 }
 
 /**
