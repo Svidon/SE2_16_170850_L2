@@ -2,4 +2,4 @@
 
 # Da fare:
 - Controllo formato degli input e testing
-- Now is indefined (nell'inserimentod)
+- Fix tabella si inserisce poi sparisce

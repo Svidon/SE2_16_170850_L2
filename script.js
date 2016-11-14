@@ -1,12 +1,9 @@
 // Lista item
 var list = [];
 // Indice dell'item trovato
-var now;
+var now = 0;
 // Massimo dello stesso item
 var max = 30;
-//Tabella in index
-var table = document.getElementById("table");
-
 
 // MANCANO TUTTI I CONTROLLI
 
@@ -90,6 +87,9 @@ function showMax () {
  * @brief Funzione che crea la tabella
  */
 function tabella () {
+	//Tabella in index
+	var table = document.getElementById("table");
+
 	// Inizializza la row
 	var initRow = document.createElement("tr");
 
@@ -99,7 +99,7 @@ function tabella () {
 
 	// Inizializza il secondo td col valore
 	var td2 = document.createElement("td");
-	thSecondCell.appendChild(document.createTextNode(list[now].number.toString()));
+	td2.appendChild(document.createTextNode(list[now].number.toString()));
 
 	// Appende i td alla row
 	initRow.appendChild(td1);
