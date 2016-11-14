@@ -4,7 +4,11 @@ var list = [];
 var now;
 // Massimo dello stesso item
 var max = 30;
+//Tabella in index
+var table = document.getElementById("table");
 
+
+// MANCANO TUTTI I CONTROLLI
 
 /**
  * @brief Funzione che mostra il form per inserire un nuovo item
@@ -23,9 +27,10 @@ function newItem () {
 	var num = document.getElementById("qty").value;
 
 	//Controllo se esiste o devo crearne uno nuovo
-	if(exists(name)){
+	if(exist(name)){
 		list[now].number += qty;
 
+		// Fa upload dell'item esistente
 		if(list[now].number > max){
 			alert("Maximum is " + max + ". Number changed");
 			list[now].number = max;
@@ -33,13 +38,15 @@ function newItem () {
 	}
 	else {
 		var item = {
-			name: name;
-			number: qty;
-		}
+			name: name,
+			number: qty,
+		};
 
 		list.push(item);
 	}
 
+	// Inserisce l'item in tabella e nasconde il form
+	tabella();
 	document.getElementById("insert").style.display = "none";
 }
 
@@ -60,12 +67,13 @@ function newMax () {
 	max = newMax;
 	alert("Maximum changed to: " + max + " for all items");
 
-	for (var i=0; i<list.length){
+	for (var i=0; i<list.length; i++){
 		if (list[i].number > max){
 			list[i].number = max;
 		}
 	}
 
+	// Mostra il massimo in pagina e nasconde il form
 	showMax();
 	document.getElementById("changemax").style.display = "none";
 }
@@ -79,6 +87,29 @@ function showMax () {
 
 
 /**
+ * @brief Funzione che crea la tabella
+ */
+function tabella () {
+	// Inizializza la row
+	var initRow = document.createElement("tr");
+
+	// Inizializza il primo td col valore
+	var td1 = document.createElement("td");
+	td1.appendChild(document.createTextNode(list[now].name));
+
+	// Inizializza il secondo td col valore
+	var td2 = document.createElement("td");
+	thSecondCell.appendChild(document.createTextNode(list[now].number.toString()));
+
+	// Appende i td alla row
+	initRow.appendChild(td1);
+	initRow.appendChild(td2);
+
+	//Appende la row alla table
+	table.appendChild(initRow);
+}
+
+/**
  * @brief Funzione di supporto che controlla l'esistenza di un item
  * @param name dell'item da cercare
  * @return true se l'item esiste, false altrimenti
@@ -86,7 +117,8 @@ function showMax () {
 function exist (name) {
 	var res = false;
 
-	for (var i=0; i<list.length){
+	for (var i=0; i<list.length; i++){
+		// Se trova un nome uguale modifica l'indice e ferma il ciclo
 		if (list[i].name == name){
 			res = true;
 			now = list[i].name;
