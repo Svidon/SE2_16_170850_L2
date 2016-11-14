@@ -39,6 +39,7 @@ function newItem () {
 			number: qty,
 		};
 
+		now = list.length - 1;
 		list.push(item);
 	}
 

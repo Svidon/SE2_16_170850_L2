@@ -3,3 +3,4 @@
 # Da fare:
 - Controllo formato degli input e testing
 - Fix tabella si inserisce poi sparisce
+- Idem con max (controlla innerHTML)
