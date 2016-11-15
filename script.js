@@ -23,6 +23,10 @@ function newItem () {
 	var nom = document.getElementById("nom").value;
 	var qty = document.getElementById("qty").value;
 
+	// Svuoto il form
+	document.getElementById("nom").value = "";
+	document.getElementById("qty").value = "";
+
 	//Controllo se esiste o devo crearne uno nuovo
 	if(exist(nom)){
 		list[now].num += qty;
@@ -62,8 +66,13 @@ function showNewMax () {
  * @param new nuovo massimo
  */
 function newMax () {
+	// Prendo parametro
 	var newMax = document.getElementById("max").value;
 	max = newMax;
+	
+	// Svuoto form
+	document.getElementById("max").value = "";
+	
 	alert("Maximum changed to: " + max + " for all items");
 
 	for (var i=0; i<list.length; i++){
