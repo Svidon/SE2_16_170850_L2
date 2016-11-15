@@ -23,10 +23,6 @@ function newItem () {
 	var nom = document.getElementById("nom").value;
 	var qty = document.getElementById("qty").value;
 
-	// Svuoto il form
-	document.getElementById("nom").value = "";
-	document.getElementById("qty").value = "";
-
 	//Controllo se esiste o devo crearne uno nuovo
 	if(exist(nom)){
 		list[now].num += qty;
@@ -48,8 +44,12 @@ function newItem () {
 		alert("qty " + list[now].num);
 	}
 
-	// Inserisce l'item in tabella e nasconde il form
+	// Inserisce l'item in tabella
 	tabella();
+
+	// Svuoto il form e lo nasconde
+	document.getElementById("nom").value = "";
+	document.getElementById("qty").value = "";
 	document.getElementById("insert").style.display = "none";
 }
 
@@ -70,9 +70,6 @@ function newMax () {
 	var newMax = document.getElementById("max").value;
 	max = newMax;
 	
-	// Svuoto form
-	document.getElementById("max").value = "";
-	
 	alert("Maximum changed to: " + max + " for all items");
 
 	for (var i=0; i<list.length; i++){
@@ -81,8 +78,11 @@ function newMax () {
 		}
 	}
 
-	// Mostra il massimo in pagina e nasconde il form
+	// Mostra il massimo in pagina
 	showMax();
+
+	// Svuoto form e lo nascondo
+	document.getElementById("max").value = "";
 	document.getElementById("changemax").style.display = "none";
 }
 
