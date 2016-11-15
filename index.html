@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="UTF-8"> 
+
+		<style>
+			table, th, td {
+			    border: 1px solid black;
+			    border-collapse: collapse;
+			}
+			th, td {
+			    padding: 15px;
+			}
+		</style>
+
+		<script src="script.js"></script>
+
+		<title>Warehouse Managing</title>
+	</head>
+
+	<body onload="tabella()">
+
+		<h1>Warehouse</h1>
+
+		<!-- Stampo il massimo dinamicamente con la funzione showMax()-->
+		<br>
+		Maximum is: <p id="maximum">30</p>
+		<br>
+
+		<!-- Stampo la tabella dinamicamente con la funzione tabella() -->
+		<h3>Items Stored</h3>
+		<div id="tab"></div>
+
+		<br>
+
+		<!-- Form per inserimento di nuovi elementi -->
+		<button onclick="showInsert()">Insert item</button>
+		<div id="insert" style="display:none">
+			<form>
+			    <p>Item name: <input type='text' id='nom' name='nom' value=""/></p>
+			    <p>Quantity: <input type='text' id='qty' name='qty' value=""/></p>
+			</form>
+			<button onclick="newItem()">Insert</button>
+		</div>
+
+		<br><br>
+
+		<!-- Form per cambiare il massimo -->
+		<button onclick="showNewMax()">Change Maximum</button>
+		<div id="changemax" style="display:none">
+			<form>
+			    <p>New Maximum: <input type='text' id='max' name='max' value=""/></p>
+			</form>
+			<button onclick="newMax()">Change</button>
+		</div>
+	</body>
+</html>
