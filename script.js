@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // Lista item
 var list = [];
 // Indice dell'item trovato
@@ -228,4 +226,3 @@ function exist (name) {
 
 	return res;
 }
->>>>>>> testing
