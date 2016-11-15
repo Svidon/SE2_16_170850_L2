@@ -52,7 +52,6 @@ function newItem () {
 
 		list.push(item);
 		now = list.length - 1;
-		alert("qty " + list[now].num);
 	}
 
 	// Inserisce l'item in tabella
