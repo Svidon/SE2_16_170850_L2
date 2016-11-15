@@ -4,14 +4,25 @@ var list = [];
 var now = 0;
 // Massimo dello stesso item
 var max = 30;
+// Controllo per mostrare form
+var showIns = true;
+// Controllo per mostrare form
+var showM = true;
 
 // MANCANO TUTTI I CONTROLLI
 
 /**
- * @brief Funzione che mostra il form per inserire un nuovo item
+ * @brief Funzione che mostra/nasconde il form per inserire un nuovo item
  */
 function showInsert () {
-	document.getElementById("insert").style.display = "block";
+	if(showIns == true){
+		document.getElementById("insert").style.display = "block";
+		showIns = false;
+	}
+	else {
+		document.getElementById("insert").style.display = "none";
+		showIns = true;
+	}
 }
 
 /**
@@ -58,7 +69,14 @@ function newItem () {
  * @brief Funzione che mostra il form per inserire un nuovo max
  */
 function showNewMax () {
-	document.getElementById("changemax").style.display = "block";
+	if(showM == true){
+		document.getElementById("changemax").style.display = "block";
+		showM = false;
+	}
+	else {
+		document.getElementById("changemax").style.display = "none";
+		showM = true;
+	}
 }
 
 /**
