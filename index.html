@@ -40,10 +40,10 @@
 		<button onclick="showInsert()">Order item</button>
 		<div id="insert" style="display:none">
 			<form>
-			    <p>Item name: <input type='text' id='name' name='name'/></p>
-			    <p>Quantity: <input type='number' id='qty' name='qty'/></p> 
-			    <button onclick="newItem()">Insert</button>
+			    <p>Item name: <input type='text' id='nom' name='nom'/></p>
+			    <p>Quantity: <input type='number' id='qty' name='qty'/></p>
 			</form>
+			<button onclick="newItem()">Insert</button>
 		</div>
 
 		<br>
@@ -51,9 +51,9 @@
 		<button onclick="showNewMax()">Change Maximum</button>
 		<div id="changemax" style="display:none">
 			<form>
-			    <p>New Maximum: <input type='number' id='max' name='max'/></p> 
-			    <button onclick="newMax()">Change</button>
+			    <p>New Maximum: <input type='number' id='max' name='max'/></p>
 			</form>
+			<button onclick="newMax()">Change</button>
 		</div>
 	</body>
 </html>

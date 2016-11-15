@@ -20,27 +20,28 @@ function showInsert () {
  */
 function newItem () {
 	// Prendo parametri
-	var nome = document.getElementById("name").value;
-	var num = document.getElementById("qty").value;
+	var nom = document.getElementById("nom").value;
+	var qty = document.getElementById("qty").value;
 
 	//Controllo se esiste o devo crearne uno nuovo
-	if(exist(name)){
-		list[now].number += qty;
+	if(exist(nom)){
+		list[now].num += qty;
 
 		// Fa upload dell'item esistente
-		if(list[now].number > max){
+		if(list[now].num > max){
 			alert("Maximum is " + max + ". Number changed");
-			list[now].number = max;
+			list[now].num = max;
 		}
 	}
 	else {
 		var item = {
-			name: name,
-			number: qty,
+			nome: nom,
+			num: qty,
 		};
 
-		now = list.length - 1;
 		list.push(item);
+		now = list.length - 1;
+		alert("qty " + list[now].num);
 	}
 
 	// Inserisce l'item in tabella e nasconde il form
@@ -66,8 +67,8 @@ function newMax () {
 	alert("Maximum changed to: " + max + " for all items");
 
 	for (var i=0; i<list.length; i++){
-		if (list[i].number > max){
-			list[i].number = max;
+		if (list[i].num > max){
+			list[i].num = max;
 		}
 	}
 
@@ -96,11 +97,11 @@ function tabella () {
 
 	// Inizializza il primo td col valore
 	var td1 = document.createElement("td");
-	td1.appendChild(document.createTextNode(list[now].name));
+	td1.appendChild(document.createTextNode(list[now].nome));
 
 	// Inizializza il secondo td col valore
 	var td2 = document.createElement("td");
-	td2.appendChild(document.createTextNode(list[now].number.toString()));
+	td2.appendChild(document.createTextNode(list[now].num));
 
 	// Appende i td alla row
 	initRow.appendChild(td1);
@@ -120,9 +121,9 @@ function exist (name) {
 
 	for (var i=0; i<list.length; i++){
 		// Se trova un nome uguale modifica l'indice e ferma il ciclo
-		if (list[i].name == name){
+		if (list[i].nome == name){
 			res = true;
-			now = list[i].name;
+			now = i;
 			break;
 		}
 	}
