@@ -19,39 +19,38 @@
 		<title>Warehouse Managing</title>
 	</head>
 
-	<body>
+	<body onload="tabella()">
 
 		<h1>Warehouse</h1>
 
+		<!-- Stampo il massimo dinamicamente con la funzione showMax()-->
 		<br>
 		Maximum is: <p id="maximum">30</p>
 		<br>
 
-		 <table id="table">
-		  <caption>Stored Items</caption>
-		  <tr>
-		    <th>Item</th>
-		    <th>Quantity</th>
-		  </tr>
-		</table>
+		<!-- Stampo la tabella dinamicamente con la funzione tabella() -->
+		<h3>Items Stored</h3>
+		<div id="tab"></div>
 
 		<br>
 
-		<button onclick="showInsert()">Order item</button>
+		<!-- Form per inserimento di nuovi elementi -->
+		<button onclick="showInsert()">Insert item</button>
 		<div id="insert" style="display:none">
 			<form>
 			    <p>Item name: <input type='text' id='nom' name='nom' value=""/></p>
-			    <p>Quantity: <input type='number' id='qty' name='qty' value=""/></p>
+			    <p>Quantity: <input type='text' id='qty' name='qty' value=""/></p>
 			</form>
 			<button onclick="newItem()">Insert</button>
 		</div>
 
-		<br>
+		<br><br>
 
+		<!-- Form per cambiare il massimo -->
 		<button onclick="showNewMax()">Change Maximum</button>
 		<div id="changemax" style="display:none">
 			<form>
-			    <p>New Maximum: <input type='number' id='max' name='max' value=""/></p>
+			    <p>New Maximum: <input type='text' id='max' name='max' value=""/></p>
 			</form>
 			<button onclick="newMax()">Change</button>
 		</div>
