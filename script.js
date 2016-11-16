@@ -9,7 +9,6 @@ var showIns = true;
 // Controllo per mostrare form
 var showM = true;
 
-// MANCANO TUTTI I CONTROLLI
 
 /**
  * @brief Funzione che mostra/nasconde il form per inserire un nuovo item
